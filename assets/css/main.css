@@ -3537,7 +3537,7 @@
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				background: #fff;
+				background: rgb(179, 14, 14);
 				content: '';
 				display: block;
 				height: 2px;
@@ -3906,7 +3906,7 @@
 	}
 
 	body.landing #footer {
-		background-color: rgba(35, 59, 80, 0.9);
+		background-color: rgba(35, 59, 80, 0.9); 
 	}
 
 	body.is-mobile.landing #page-wrapper {
