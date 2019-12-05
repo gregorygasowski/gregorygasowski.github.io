@@ -3275,7 +3275,7 @@
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #1570d8;
+		background: #2d85eb;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3537,7 +3537,7 @@
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				background: rgb(179, 14, 14);
+				background: rgb(6, 101, 245);
 				content: '';
 				display: block;
 				height: 3px;
