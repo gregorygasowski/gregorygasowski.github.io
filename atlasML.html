@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<link rel="icon" href="https://www.maxpixel.net/static/photo/1x/Female-Girl-Avatar-Lady-Blond-User-Woman-310807.png">
+		<title>Gregory Gasowski | CERN Machine Learning</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                               tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+                               });
+        </script>
+        <script type="text/javascript"
+  			src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-97381584-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+
+		
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+						<header id="header">
+						<h1><a href="index.html">Gregory Gasowski</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="index.html#whoami">Who am I</a></li>
+											<li><a href="index.html#skills">Skills</a></li>
+											<li><a href="index.html#experience">Experience</a></li>
+											<li><a href="./atlas_splash.html">Physics</a></li>
+											<li><a href="./atlasML.html">CERN Machine Learning</a></li>
+											<li><a href="./sciencecomms.html">Media, Communication, Outreach</a></li>
+											<li><a href="index.html#interests">Interests</a></li>
+											<li><a href="index.html#dates">Upcoming Dates</a></li>
+											<li><a href="index.html#cta">Contacts</a></li>
+											<!-- <li><a href="#">Sign Up</a></li> -->
+											<!-- <li><a href="#">Log In</a></li> -->
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>CERN Machine Learning</h2>
+							<p>A quick look into my personal involvement with bringing state-of-the-art Machine Learning techniques to High Energy Physics</p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+								<h3>My Projects</h3>
+								<h2>Generative Adversarial Networks for Physics Simulation</h2>
+								<div style="display: inline-block; vertical-align: text-top;" data-badge-details="right" data-badge-type="donut" data-doi="10.1103/PhysRevLett.120.042003" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></div> 
+
+								<div style="display: inline-block; vertical-align: text-top;" data-badge-details="right" data-badge-type="donut" data-doi="10.1103/PhysRevD.97.014021" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed" ></div>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-doi="10.1007/s41781-017-0004-6" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></div>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-arxiv-id="1711.08813" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></div>
+
+								<p>My main research interest during the final years of my PhD revolved around training Generative Adversarial Networks (GANs) to speed up event simulation in Particle Physics. </p>
+
+								<p>Large simulated datasets are crucial in Particle Physics, just like in Nuclear Physics, Cosmology and other Physical Sciences, for interpreting results of ongoing experiments and for estimating yields of different proposed experimental setups. However, the complex simulation packages are very computationally expensive and time consuming. GANs are a deep learning solution that circumvents these problems by learning the data distribution and generating new samples from it.</p>
+
+								<p>In order to take advantage of the pixel-level symmetries of Physics events in our detectors while explicitly inducing location-based feature detection, we introduced an architecture modification to the ACGAN formulation which we call LAGAN (Location-Aware Generative Adversarial Network). Details of this study can be found in <a id="overwhite" href="https://arxiv.org/abs/1701.05927">this paper</a>, which I presented at the <a id="overwhite" href="https://indico.cern.ch/event/595059/timetable/#20170320">2017 CERN Interexperimental Machine Learning (IML) Workshop</a>:</p>
+
+								<center>
+									<div class="resp-container">
+										<iframe class="resp-iframe" frameborder="0" src="https://cds.cern.ch/video/2256878?showTitle=true" allowfullscreen></iframe>
+									</div>
+								</center>
+
+								<p>The LAGAN unit can be use to construct more complex GAN systems for realistic simulations of subatomic particles interacting with multi-layer, heterogeneous, 3D calorimeter detectors. You can find more details in our CaloGAN paper <a id="overwhite" href="https://arxiv.org/abs/1705.02355">(click)</a>.</p>
+
+								<p>The summary of my work carried out thanks to the generosity of the HEP Center for Computational Excellence can be found at this link <a id="overwhite" href="https://press3.mcs.anl.gov/hepfce/?page_id=2400">(click)</a>.</p>
+
+
+								<hr />
+								<!-- --------- -->
+
+								<h2>Parameter Tuning in Monte Carlo Simulators with Surrogate Models and Gaussian Processes</h2>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-altmetric-id="36152345" data-hide-no-mentions="true" class="altmetric-embed"></div>
+
+								<p> At the 2018 IML workshop at CERN on April 10, 2018, I presented an update on the last (unpublished) project I worked on while in graduate school, titled "Adversarial Tuning of Perturbative Parameters in Non-Differentiable Physics Simulators". It revolved around the use of deep learning for Monte Carlo generator tuning. This method for tuning perturbative parameters in Monte Carlo simulation used a classifier loss in high dimensions to separate datasets generated with different input parameteres by analyzing batches of output examples, until the generated dataset with tunable input parameters looked indistinguishable from the ground-truth dataset with unknown input parameters. We used an LSTM trained on the radiation pattern inside jets to learn the parameters of the final state shower in the Pythia Monte Carlo generator. This represented a step forward compared to unidimensional distributional template-matching methods.
+
+								<center>
+									<div class="resp-container">
+										<iframe class="resp-iframe" src="https://mediastream.cern.ch/MediaArchive/Video/Public2/weblecture-player/index.html?year=2018&lecture=668017c26" allowfullscreen scrolling="no" frameborder="0"></iframe>
+									</div>
+								</center>
+
+								</p>
+								<hr />
+
+								<!-- --------- -->
+								<h2>Machine Learning for b-Tagging</h2>
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-arxiv-id="1711.08811" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed"></div>
+
+								<p>An ongoing project of mine is to contribute to the improvement of the $b$-tagging pipeline by providing scalable Machine Learning solutions. </p>
+
+								<p> In collaboration with colleagues from UC Irvine, Stanford and UGeneva, I've developed recurrent and convolutional architectures to improve upon the current impact parameter based tagging techniques. Drawing inspiration from NLP, I introduced the use of bidirectional recurrent units and 1D convolutional layers for jet tagging using the characteristics of the tracks that compose them. The first public results on this project are available in the ATLAS <a id="overwhite" href="https://cds.cern.ch/record/2255226/files/ATL-PHYS-PUB-2017-003.pdf">PUB-NOTE-2017-003</a>, which was presented at the <a id="overwhite" href="https://indico.cern.ch/event/577003/"> 2017 Connecting the Dots Workshop</a>.</p>
+
+								<p>Updated performance results are presented, in the larger context of a larger b-tagging algorithms performance report, in the ATLAS <a id="overwhite" href="http://cds.cern.ch/record/2273281/files/ATL-PHYS-PUB-2017-013.pdf">PUB-NOTE-2017-013</a>.
+
+								<p>My authorship qualification task for the ATLAS collaboration also included the optimization of a lower level tagger using Boosted Decision Trees.</p>
+								<hr />
+
+								<h2>Dark Knowledge for the Matrix Element Method (MEM)</h2>
+								<p>The <a id="overwhite" href="http://arxiv.org/pdf/hep-ex/0609053.pdf">MEM</a> is a Physics-driven, computationally expensive technique which is widely used in HEP due to the clear physical insights it provides. It directly connects theoretical and experimental Physics, by allowing us to estimate several parameters at once using integration over phase space and detector response. Its output is usally combined with  high level features, such as the 4-vectors of the particles in the event and the missing transverse energy, as inputs to a NN in order to augment the raw features with a Physics-instilled engineered variable.</p>
+
+								<p>Our goal is to use Dark Knowledge to construct a net that would be able to mimic the performance of MEM, while reducing computational requirements. This net is expected to capture not only the performance but also the overall distribution shape of the output of MEM, in order to preserve its discriminating power as an input feature to the original NN. Our benchmark is the $ttH$, with $H \rightarrow bb$</i> <a id="overwhite" href="http://arxiv.org/pdf/1503.05066v3.pdf">ATLAS analysis</a>. </p>
+
+								<hr />
+
+								<h2>Deep Learning for Top and Boson Tagging in Boosted Topologies</h2>
+								<p>During my first year at CERN, I developed a boosted boson tagger using Deep Learning for binary and multiclass classification purposes for the $W’\rightarrow WZ$ analysis, as well as a boosted top tagger which outperformed ordinary substracture variable scans.Additionally, I investigated the model's ability to learn high order correlations between tracking and calorimeter variables, and I performed variable selection studies and hyperparameters grid searches.</p>
+
+								<p>
+								At the time, I used a feed-forward neural network from the AGILEPack library, with stacked auto-encoders and unsupervised pre-training. </p>
+
+								<p>
+								My initial work later resulted in the published results outlined in the ATLAS <a id="overwhite" href="http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2017-004/">ATL-PHYS-PUB-2017-004</a>. </p>
+
+								<hr />
+
+								<h2>RNN for Event Classification</h2>
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-doi="10.1103/PhysRevLett.114.081802" data-condensed="true"  class="altmetric-embed"></div>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-doi="10.1103/PhysRevD.92.092004" data-condensed="true"  class="altmetric-embed"></div>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-arxiv-id="1807.04873" data-condensed="true"  class="altmetric-embed"></div>
+
+								<p>As a member of the $hh\rightarrow \gamma \gamma bb$ analysis group, I'm looking for evidence of the production of Higgs pairs decaying to two photons and a pair of $b$ quark-antiquark. I use Machine Learning techniques inspired by Natural Language Processing to explore an event-level approach to Physics analysis. I design, train and test Recurrent Neural Networks using Keras, in order to classify events with variable numbers of particles.</p>
+
+								<p>This method allows for a holistic study of each event, by combining event-level variables with jet and photon specific features, without limiting the number of jets or particles under consideration. This represents a huge step forward from classic cut-based analyses.</p>
+
+								<hr />
+								<h3>Machine Learning and Artificial Intelligence at CERN and in HEP</h3>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-arxiv-id="1712.06982" data-condensed="true"  class="altmetric-embed"></div>
+
+								<div style="display: inline-block; vertical-align: text-top;"data-badge-details="right" data-badge-type="donut" data-arxiv-id="1803.04165" data-condensed="true"  class="altmetric-embed"></div>
+
+								<p>If you want to learn more about the people involved in Machine Learning research at CERN and in High Energy Physics, consult <a id="overwhite" href="HEPML_directory.html">this opt-in directory</a>. </p>
+								You may find more information about the community of scientists involved in bringing Machine Learning methods to the physical sciences by following the efforts of the <a id="overwhite" href="http://darkmachines.org/">Dark Machines collective</a>, the <a id="overwhite" href="https://hepsoftwarefoundation.org/">HEP Software Foundation (HSF)</a>, the <a id="overwhite" href="https://iml.web.cern.ch/">CERN Interexperimental Machine Learning (IML) group</a>, and the <a id="overwhite" href="http://machinelearning.fnal.gov/">Fermilab Machine Learning group</a>, among others.
+
+								<hr />
+
+
+								<h3>Tools</h3>
+								In order to perform these studies (and more), I use the following tools:
+								<div class="partners white-bg" id="partners" role="region" aria-label="Affiliates Logos"><div class="container">
+									<ul class="client-logos">
+									<li><a href="https://pytorch.org/" title=""><img src="images/pytorch.png" alt="pytorch"></a></li>
+									<li><a href="http://scikit-learn.org/stable/" title=""><img src="images/sklearn.png" alt="scikit-learn"></a></li>
+									<li><a href="http://keras.io/" title=""><img src="images/keras.jpg" alt="Keras"></a></li>
+									<li><a href="https://www.tensorflow.org/" title=""><img src="images/tf.png" alt="TensorFlow"></a></li>
+									<li><a href="http://pandas.pydata.org/index.html" title=""><img src="images/pandas.jpeg" alt="Logo"></a></li>
+									<li><a href="http://scipy.org/" title=""><img src="images/scipy.png" alt="SciPy"></a></li>
+									<li><a href="http://www.rootpy.org/" title=""><img src="images/rootpy.png" alt="rootpy"></a></li>
+									<!-- <li><a href="https://root.cern.ch/" title=""><img src="images/root.png" alt="ROOT"></a></li> -->
+									<!-- <li><a href="https://root.cern.ch/tmva" title=""><img src="images/tmva.gif" alt="Logo"></a></li> -->
+
+								
+									</ul>
+								</div></div> 
+
+								
+
+
+
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://twitter.com/WonderMicky" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://plus.google.com/109356208738453667148" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+							<li><a href="https://www.linkedin.com/in/michelapaganini" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/mickypaganini" class="icon fa-github"><span class="label">Github></span></a></li>
+							<li><a href="mailto:michela.paganini@yale.edu" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Gregory Gasowski</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
