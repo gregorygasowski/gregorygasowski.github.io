@@ -2756,7 +2756,7 @@
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #2184b2;
 			color: #c7ebe8;
 		}
 
@@ -3540,7 +3540,7 @@
 				background: rgb(179, 14, 14);
 				content: '';
 				display: block;
-				height: 4px;
+				height: 3px;
 				position: absolute;
 				width: 100%;
 			}
