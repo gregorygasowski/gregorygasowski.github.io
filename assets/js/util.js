@@ -583,5 +583,8 @@
 			});
 
 	};
-
+// get full year
+	{
+		document.getElementById("year").innerHTML = new Date().getFullYear();
+}
 })(jQuery);
