@@ -1702,7 +1702,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #2d85eb;
 		}
 
 	.select-wrapper {
@@ -2756,7 +2756,7 @@
 		}
 
 		.wrapper.style1 {
-			background-color: #0767e4;
+			background-color: #2d85eb;
 			color: #c7ebe8;
 		}
 
@@ -2914,7 +2914,7 @@
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
+			background-color: #6085aa;
 			color: #d3d4e4;
 		}
 
@@ -3369,7 +3369,7 @@
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: #6085aa;
+		background: #2d85eb;
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -4039,7 +4039,7 @@
     color: #FFFF99;
 	}
 
-	a#overwhite:hover {color:hotpink}
+	a#overwhite:hover {color:rgb(105, 108, 255)}
 
 
 	sub {
@@ -4431,7 +4431,7 @@
 				background-color: transparent;  
 				/*transparent;*/
 				border: solid 2px #e5e6e7;
-				color: #BE006B;
+				color: #2d85eb;
 			}
 
 				input[type="button"].style2:hover,
