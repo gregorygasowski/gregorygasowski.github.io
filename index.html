@@ -40,10 +40,48 @@
 			body.landing #page-wrapper, body.is-mobile.landing #banner, body.is-mobile.landing .wrapper.style4 {
 				background-image: linear-gradient(rgba(16,24,38,0.68), rgba(16,24,38,0.68)), url("images/mit01w.jpg");
 			}
+			/* Phones and tablets: the template paints the photo on the banner itself, which hides the
+			   animated canvas. Paint it on the page wrapper (top screen only) and keep the banner transparent. */
+			body.is-mobile.landing #banner { background: transparent; }
+			body.is-mobile.landing #page-wrapper { background-image: linear-gradient(rgba(16,24,38,0.68), rgba(16,24,38,0.68)), url("images/mit01w.jpg"); background-attachment: scroll; background-size: auto 100vh; background-position: center top; background-repeat: no-repeat; background-color: #2e3842; }
 			#banner p { color: #fff; }
 			/* Animated network layer: sits over the photo, under all content */
 			#page-wrapper { position: relative; }
-			#bg-network { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+			#bg-network, #nn-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+			/* Neural network background mode (alternates with the network background every 2 hours) */
+			body.bg-neural #banner h2, body.bg-neural #banner p { text-shadow: 0 1px 8px rgba(0,0,0,0.85); }
+			#nn-ui { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 2; text-align: left; letter-spacing: normal; text-transform: none; }
+			#nn-panel { display: grid; grid-template-columns: repeat(4, 1fr) 140px; gap: 6px; font-size: 10px; line-height: 1.35; color: #fff; }
+			#nn-panel .step, #nn-panel .chart { background: rgba(16,24,38,0.72); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 6px 9px; transition: border-color .3s, box-shadow .3s, background .3s; }
+			#nn-panel h3 { margin: 0 0 2px; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; opacity: 0.85; font-weight: 700; line-height: 1.3; }
+			#nn-panel .eq { font-family: Consolas, "Courier New", monospace; font-size: 10px; }
+			#nn-panel .live { font-family: Consolas, "Courier New", monospace; font-size: 9.5px; opacity: 0.8; margin-top: 2px; }
+			#nn-panel .step.active { border-color: rgba(56,220,205,0.9); box-shadow: 0 0 18px rgba(56,220,205,0.35); background: rgba(16,30,44,0.85); }
+			#nn-step-loss.active, #nn-step-backward.active { border-color: rgba(255,170,70,0.95) !important; box-shadow: 0 0 18px rgba(255,170,70,0.35) !important; }
+			#nn-step-update.active { border-color: rgba(255,255,255,0.9) !important; box-shadow: 0 0 18px rgba(255,255,255,0.3) !important; }
+			#nn-panel .chart { display: flex; flex-direction: column; }
+			#nn-loss-chart { width: 100%; flex: 1; min-height: 28px; }
+			#nn-panel .legend { margin-top: 3px; font-size: 9px; opacity: 0.8; }
+			#nn-panel .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 3px 0 6px; vertical-align: middle; }
+			#nn-sound { display: block; margin: 0 0 6px auto; cursor: pointer; background: rgba(16,24,38,0.75); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 18px; padding: 0 12px; height: 26px; line-height: 24px; font: 600 11px "Segoe UI", Arial, sans-serif; letter-spacing: 0.05em; box-shadow: none; text-transform: none; }
+			#nn-sound:hover { border-color: rgba(56,220,205,0.9); }
+			#nn-tip { position: fixed; z-index: 9000; display: none; max-width: 460px; pointer-events: none; text-align: left; letter-spacing: normal; text-transform: none;
+				background: rgba(10,16,26,0.94); border: 1px solid rgba(56,220,205,0.7); border-radius: 6px; padding: 10px 12px; font-size: 12px; line-height: 1.55; color: #fff; box-shadow: 0 6px 24px rgba(0,0,0,0.45); }
+			#nn-tip b { color: #fff; }
+			#nn-tip .f { font-family: Consolas, "Courier New", monospace; color: #9ff3ea; }
+			#nn-tip .n { font-family: Consolas, "Courier New", monospace; color: #cfe3ff; font-size: 11px; }
+			#nn-tip .g { font-family: Consolas, "Courier New", monospace; color: #ffc27a; }
+			#nn-tip .muted { color: #8aa; }
+			body.bg-neural #banner .more { bottom: 150px; }
+			@media screen and (max-width: 980px) {
+				#nn-panel { grid-template-columns: 1fr 1fr; }
+				#nn-panel .live, #nn-panel .chart { display: none; }
+			}
+			@media screen and (max-width: 736px) {
+				#nn-panel { display: none; }
+				body.bg-neural #banner .more { bottom: 0; }
+			}
 			#page-wrapper > section, #page-wrapper > footer { position: relative; z-index: 1; }
 			#banner .tagline { font-size: 0.8em; letter-spacing: 0.15em; opacity: 0.85; }
 			#cta header h2, #cta header p { color: #fff; }
@@ -88,6 +126,8 @@
 		<div id="page-wrapper">
 
 			<canvas id="bg-network" aria-hidden="true"></canvas>
+			<canvas id="nn-canvas" data-zone="#banner, #cta" aria-hidden="true"></canvas>
+			<div id="nn-tip" role="status"></div>
 
 			<!-- Header -->
 			<header id="header" class="alt">
@@ -119,6 +159,36 @@
 					<p class="tagline">IT Strategy &middot; Enterprise Architecture &middot; Data &amp; BI &middot; Digital Transformation</p>
 				</div>
 				<a href="#about" class="more scrolly">Learn More</a>
+				<div id="nn-ui">
+					<button id="nn-sound" type="button" aria-pressed="true">Sound on</button>
+					<div id="nn-panel" aria-label="Neural network training steps">
+						<div class="step" id="nn-step-forward">
+							<h3>1 &middot; Forward propagation</h3>
+							<div class="eq">z = (x&#8321;&middot;w&#8321;) + (x&#8322;&middot;w&#8322;) + b &nbsp; a = ReLU(z) = max(0, z)</div>
+							<div class="live" id="nn-v-forward"></div>
+						</div>
+						<div class="step" id="nn-step-loss">
+							<h3>2 &middot; Loss calculation</h3>
+							<div class="eq">L = &frac12;(&#375; &minus; y)&sup2; &nbsp; (mean squared error)</div>
+							<div class="live" id="nn-v-loss"></div>
+						</div>
+						<div class="step" id="nn-step-backward">
+							<h3>3 &middot; Backpropagation</h3>
+							<div class="eq">&delta; = &part;L/&part;z (chain rule) &nbsp; &part;L/&part;w = &delta; &middot; a<sub>prev</sub></div>
+							<div class="live" id="nn-v-backward"></div>
+						</div>
+						<div class="step" id="nn-step-update">
+							<h3>4 &middot; Optimization (SGD)</h3>
+							<div class="eq">w &larr; w &minus; &eta; &middot; &part;L/&part;w &nbsp; b &larr; b &minus; &eta; &middot; &delta;</div>
+							<div class="live" id="nn-v-update"></div>
+						</div>
+						<div class="chart">
+							<h3>Training loss</h3>
+							<canvas id="nn-loss-chart"></canvas>
+							<div class="legend"><span class="dot" style="background:#38dccd"></span>+w <span class="dot" style="background:#5aaaff"></span>&minus;w <span class="dot" style="background:#ffaa46"></span>gradient</div>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<!-- About -->
@@ -335,7 +405,21 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="assets/js/network-bg.js"></script>
+		<script>
+			/* Background switcher: alternates the two animated backgrounds every 2 hours of the
+			   visitor's local time (even 2-hour blocks: neural network, odd blocks: network).
+			   Add ?bg=neural or ?bg=network to the URL to pick one directly. */
+			(function () {
+				var forced = (location.search.match(/[?&]bg=(neural|network)\b/) || [])[1];
+				var mode = forced || (Math.floor(new Date().getHours() / 2) % 2 === 0 ? 'neural' : 'network');
+				document.body.className += ' bg-' + mode;
+				var unused = mode === 'neural' ? ['bg-network'] : ['nn-canvas', 'nn-ui', 'nn-tip'];
+				for (var i = 0; i < unused.length; i++) { var el = document.getElementById(unused[i]); if (el) el.parentNode.removeChild(el); }
+				var s = document.createElement('script');
+				s.src = mode === 'neural' ? 'assets/js/neural-network.js' : 'assets/js/network-bg.js';
+				document.body.appendChild(s);
+			})();
+		</script>
 
 	</body>
 </html>
