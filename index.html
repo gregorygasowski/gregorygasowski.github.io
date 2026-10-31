@@ -108,6 +108,9 @@
 			.card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 1.5em; }
 			.wrapper.style2 .card { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.12); }
 			.card h3 { font-size: 0.95em; margin: 0 0 0.75em 0; }
+			.card.featured { max-width: 64em; margin: 0 auto 1.5em auto; text-align: left; border-color: rgba(33,178,166,0.6); }
+			.card.featured .actions { margin: 1em 0 0 0; }
+			.card.featured .actions li { padding-left: 0; padding-right: 0.75em; }
 			.card p, .card li { font-size: 0.9em; line-height: 1.6; }
 			.card ul { margin: 0; padding-left: 1.1em; }
 			.card .meta { font-size: 0.75em; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; margin: 0 0 0.5em 0; }
@@ -308,6 +311,15 @@
 						<h2>Projects &amp; Code</h2>
 						<p>Selected hands-on work from my GitHub, <a href="https://github.com/wavemx">github.com/wavemx</a>.</p>
 					</header>
+					<div class="card featured">
+						<p class="meta">JavaScript &middot; Neural networks &middot; Interactive visualization</p>
+						<h3><a href="https://wavemx.github.io/live-neural-network/neural-network.html">Live Neural Network Training Animation</a></h3>
+						<p>A neural network that trains live in the browser: 2 inputs, 10 hidden layers of 5 ReLU neurons, and 1 output. Forward propagation, loss, backpropagation and gradient-descent updates are real math, animated step by step. Hover any neuron to see its calculation with live values.</p>
+						<ul class="actions">
+							<li><a href="https://wavemx.github.io/live-neural-network/neural-network.html" class="button special small">Live demo</a></li>
+							<li><a href="https://github.com/wavemx/live-neural-network" class="button small">Code &amp; explanation</a></li>
+						</ul>
+					</div>
 					<div class="grid">
 						<div class="card">
 							<p class="meta">Python &middot; Azure OpenAI</p>
