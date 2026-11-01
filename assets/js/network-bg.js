@@ -1,4 +1,5 @@
 /* Animated network background drawn over the landing photo.
+   Designed and created by Gregory Gasowski (https://gregorygasowski.github.io).
    Original implementation: drifting nodes, proximity links, soft glows, cursor attraction. */
 (function () {
 	var canvas = document.getElementById('bg-network');
